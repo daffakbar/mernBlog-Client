@@ -23,13 +23,15 @@ const CreateBlog = (props) => {
         const id = props.match.params.id;
         if (id) {
             setIsUpdate(true)
-            axios.get(`http://localhost:4000/v1/blog/post/${id}`)
+            // axios.get(`http://localhost:4000/v1/blog/post/${id}`)
+            axios.get(`https://api-blog-mern.herokuapp.com/v1/blog/post/${id}`)
             .then(res => {
                 const data = res.data.data;
                 console.log('success: ', data)
                 dispatch(setForm('title', data.title))
                 dispatch(setForm('body', data.body))
-                dispatch(setImgPreview(`http://localhost:4000/${data.image}`))
+                // dispatch(setImgPreview(`http://localhost:4000/${data.image}`))
+                dispatch(setImgPreview(`https://api-blog-mern.herokuapp.com/${data.image}`))
             })
             .catch(err => {
                 console.log('err: ', err)
