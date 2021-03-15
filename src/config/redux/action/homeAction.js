@@ -2,8 +2,8 @@ import Axios from "axios";
 
 export const setDataBlog = (page) => (dispatch) => {
     // Axios.get(`http://localhost:4000/v1/blog/posts?page=${page}&perPage=2`)
-    // Axios.get(`http://localhost:4000/v1/blog/posts?page=${page}&perPage=2`)
-    Axios.get(`https://api-blog-mern.herokuapp.com/v1/blog/posts?page=${page}&perPage=2`)
+    Axios.get(`http://localhost:4000/v1/blog/posts?page=${page}&perPage=2`)
+    // Axios.get(`https://api-blog-mern.herokuapp.com/v1/blog/posts?page=${page}&perPage=2`)
     .then(result => {
         const responAPI = result.data;
         console.log('data API :', result.data)

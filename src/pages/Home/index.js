@@ -41,8 +41,8 @@ const Home = () => {
               {
                 label: 'Yes',
                 onClick: () => {
-                    // axios.delete(`http://localhost:4000/v1/blog/post/${id}`)
-                    axios.delete(`https://api-blog-mern.herokuapp.com/v1/blog/post/${id}`)
+                    axios.delete(`http://localhost:4000/v1/blog/post/${id}`)
+                    // axios.delete(`https://api-blog-mern.herokuapp.com/v1/blog/post/${id}`)
                     .then(res => {
                         console.log('success :', res.data)
                         dispatch(setDataBlog(counter))
@@ -71,8 +71,8 @@ const Home = () => {
                     return (
                         <Blogitem 
                             key={blog._id} 
-                            // image={`http://localhost:4000/${blog.image}`} 
-                            image={`https://api-blog-mern.herokuapp.com/${blog.image}`} 
+                            image={`http://localhost:4000/${blog.image}`} 
+                            // image={`https://api-blog-mern.herokuapp.com/${blog.image}`} 
                             title={blog.title} 
                             name={blog.author.name} 
                             date={blog.updatedAt} 
